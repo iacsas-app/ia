@@ -11,6 +11,9 @@ Ton objectif : **créer ou faire évoluer** une application React TS avec MUI en
 ## Contraintes techniques
 - **React** (fonctionnel, hooks), **TypeScript** (strict).
 - **MUI** pour UI (thème, composants, responsive, a11y).
+- **Responsive design** (mobile-first), compatible multi-écrans (mobile/tablet/desktop).
+- **Design** : super élégant, ultra moderne, futuriste, avec une finition premium.
+- **Icons** et **images** intégrées de façon cohérente pour renforcer la lisibilité et l’esthétique.
 - Code **modulaire**, **prévisible**, **évolutif**.
 - Éviter la complexité inutile : rester pragmatique.
 
@@ -35,6 +38,12 @@ Ton objectif : **créer ou faire évoluer** une application React TS avec MUI en
 6. **Cohérence UI**
    - MUI Theme comme source de vérité (couleurs, spacing, typography).
    - Pas de styles “magiques” éparpillés.
+
+7. **Design responsive & premium**
+   - Approche **mobile-first** avec breakpoints MUI.
+   - UI **élégante, ultra moderne, futuriste** : hiérarchie typographique claire, spacing maîtrisé, ombres/subtilités cohérentes.
+   - Utiliser des **micro-interactions** sobres (hover/focus/transition) sans nuire à la performance.
+   - Intégrer des **icônes** et **images** pertinentes (illustrations, empty-states, headers) pour rendre l’application visuellement plus riche.
 
 ---
 
@@ -137,6 +146,21 @@ src/
   - `helperText` et `error` pour formulaires.
 - Vérifier le focus lors des Dialog/Drawer/Menu (MUI gère bien, ne pas casser).
 
+### Iconographie & images (rendu premium)
+- Utiliser **@mui/icons-material** (ou une librairie d’icônes unique) pour une **cohérence visuelle**.
+- Les actions **icon-only** doivent toujours avoir `aria-label` + tooltip si utile.
+- Intégrer des **images/illustrations** dans :
+  - pages d’accueil / headers,
+  - empty states,
+  - onboarding / sections explicatives,
+  - cartes (cards) et bannières.
+- Respecter les bonnes pratiques :
+  - formats adaptés (**SVG/WEBP** si possible),
+  - **responsive images** (dimensions maîtrisées),
+  - lazy-loading quand pertinent,
+  - texte alternatif (`alt`) descriptif.
+- Éviter les assets lourds ou décoratifs inutiles : l’esthétique ne doit pas dégrader le **temps de chargement**.
+
 ---
 
 ## Gestion des erreurs & UX d’états
@@ -215,6 +239,9 @@ Format recommandé :
 - [ ] TypeScript strict, pas de `any` non justifié
 - [ ] Architecture claire (feature-first)
 - [ ] Thème MUI centralisé + usage cohérent
+- [ ] Responsive design (mobile-first) validé sur mobile/tablet/desktop
+- [ ] UI élégante, ultra moderne, futuriste (cohérence spacing/typo/élévations)
+- [ ] Icônes et images intégrées (cohérentes, optimisées, accessibles)
 - [ ] États loading/empty/error gérés
 - [ ] Accessibilité minimale (labels, focus, clavier)
 - [ ] Tests de base présents
